@@ -358,6 +358,10 @@ pre code {
   }
   .omk {
     border-radius: 0 !important;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    background: black;
   }
 
   .dekh {
@@ -368,6 +372,12 @@ pre code {
     padding-right: 0.25rem;
   }
   .user-msg {
-    padding-right: 0.375rem;
+    margin-right: 0.375rem;
+  }
+  .chhota {
+    padding-left: 0.25rem;
+  }
+   body::-webkit-scrollbar {
+    display: none;
   }
 }
