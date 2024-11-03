@@ -165,7 +165,7 @@ const MessageContent = ({
             <div className="mb-4">
               {!imagesLoaded && imageSearchEnabled && <ImageSkeleton />}
               {message.images && imagesLoaded && (
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 dekh gap-2">
                   {message.images.slice(0, 4).map((image, i) => (
                     <img
                       key={i}
@@ -193,7 +193,7 @@ const MessageContent = ({
         {message.role === 'user' && message.content}
       </div>
       {message.role === 'assistant' && !message.isStreaming && (
-        <div className="flex pl-4 gap-1 transition-opacity">
+        <div className="chhota flex pl-4 gap-1 transition-opacity">
           <Button
             variant="ghost"
             size="sm"
