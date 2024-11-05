@@ -376,7 +376,7 @@ export default function SearchResults() {
         ).then((res) => res.json());
       }
 
-      const response = await fetch(
+    /*  const response = await fetch(
         'https://bhkkhjgkk-mixtral-46-7b-fastapi-v2-stream.hf.space/generate/',
         {
           method: 'POST',
@@ -399,7 +399,19 @@ export default function SearchResults() {
             system_prompt: `YOU ARE AN AI ASSISTANT NAMED SHADOW AI`,
           }),
           signal: abortControllerRef.current.signal,
-        }
+        } */
+        const response = await fetch('https://red-panda-v1.koyeb.app/answer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query,
+          model: 'llama-3.1-70b',
+          history: messages
+            .filter((msg) => !msg.isStreaming)
+            .map(({ role, content }) => ({ role, content })),
+        }),
+        signal: abortControllerRef.current.signal,
+      }
       );
 
       const reader = response.body?.getReader();
